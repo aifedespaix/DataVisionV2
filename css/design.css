@@ -1,0 +1,52 @@
+html, body, #content {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+#content {
+  width: 1080px;
+  height: 720px;
+  background-color: #fff;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+@keyframes coeur {
+  0% {
+    font-size: 50px;
+    color: #DC3052;
+  }
+  80% {
+    font-size: 1200px;
+    left: calc((1080px / 2) - (1200px / 2));
+    top: calc((720px / 2) - (1200px / 2));
+    color: #F50D1D;
+    background-color: transparent;
+  }
+  100% {
+    font-size: 1200px;
+    left: calc((1080px / 2) - (1200px / 2));
+    top: calc((720px / 2) - (1200px / 2));
+    color: #F50D1D;
+    background-color: #F50D1D;
+  }
+}
+
+#coeur {
+  position: relative;
+  left: calc((1080px / 2) - (50px / 2));
+  top: calc((720px / 2) - (50px / 2));
+  font-size: 50px;
+  color: #DC3052;
+  cursor: pointer;
+}
+
+#coeur:hover {
+  animation-name: coeur;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
