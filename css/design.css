@@ -3,29 +3,41 @@ html, body, #content {
   padding: 0;
   background-color: #000;
   font-family: 'Ribeye', cursive;
+  cursor: default;
 }
 
 #content {
   width: 1080px;
   height: 720px;
-  background-color: #fff;
+  background-color: #0CA600;
   margin: auto;
-  background-image: url("https://pixabay.com/static/uploads/photo/2014/10/08/20/52/cereals-480691_960_720.jpg");
+}
+
+#fond {
+  /*background-image: url("https://pixabay.com/static/uploads/photo/2014/10/08/20/52/cereals-480691_960_720.jpg");*/
   -webkit-background-size: 100%;
+  background-color: inherit;
   background-size: 100%;
+  width: 1080px;
+  top: 20%;
+  height: calc(720px - 11%);
+  position: absolute;
+  z-index: 3;
+  background-image: url("http://www.conscience-et-eveil-spirituel.com/wp-content/uploads/2015/06/agriculture-intensive.jpg");
 }
 
 h1 {
   text-align: center;
   top: 0;
+  cursor: default;
 }
 
 .onglet {
   width: 1080px;
   height: calc(720px - 10%);
   position: absolute;
-  top: 15%;
-  z-index: 0;
+  top: 20%;
+  z-index: 2;
 }
 
 .onglet:hover {
@@ -33,13 +45,26 @@ h1 {
 }
 
 .onglet .titre {
-  position: absolute;
-  width: 20%;
+  width: 19%;
   text-align: center;
-  height: 10%;
+  height: 15%;
   vertical-align: bottom;
-  line-height: 100px;
-  top: -10%;
+  position: absolute;
+  top: -15%;
+  z-index: 6;
+  border-radius: 10% 10% 0 0;
+  background-color: inherit;
+  padding: 3px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.onglet .titre:hover {
+}
+
+
+.onglet .ongletInfos {
+  padding: 10px;
 }
 
 #onglet1 .titre {
@@ -52,14 +77,21 @@ h1 {
   left: 40%;
 }
 
-.transparence {
-  color: #fff;
+#onglet1:hover {
+  background-color: #66f;
+}
+#onglet2:hover {
+  background-color: #f66;
+}
+#onglet3:hover {
+  background-color: #f6f;
 }
 
 .transparence {
+  color: #fff;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
   color: #000;
 }
 
@@ -88,20 +120,6 @@ svg {
     transform: rotate(-90deg);
 }
 
-.circle_animation {
-  stroke-dasharray: 440;
-  stroke-dashoffset: 440;
-}
-
-.html .circle_animation {
-    -webkit-animation: html 1s ease-out forwards;
-    animation: html 1s ease-out forwards;
-}
-
-.css .circle_animation {
-    -webkit-animation: css 1s ease-out forwards;
-    animation: css 1s ease-out forwards;
-}
 
 @-webkit-keyframes html {
   to {
@@ -162,3 +180,19 @@ svg {
   animation-duration: 3s;
   animation-fill-mode: forwards;
 }*/
+
+.iconeTxt {
+  position: relative;
+  height: 50%;
+  display: block;
+  width: 25%;
+  text-align: center;
+}
+
+div:first-child:hover::after {
+    background-color: #44b800;
+}
+
+.fa:hover {
+  cursor: pointer;
+}
