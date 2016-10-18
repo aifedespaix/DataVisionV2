@@ -11,16 +11,17 @@ html, body, #content {
   height: 720px;
   background-color: #0CA600;
   margin: auto;
+  color: #fff;
 }
 
 #fond {
   /*background-image: url("https://pixabay.com/static/uploads/photo/2014/10/08/20/52/cereals-480691_960_720.jpg");*/
   -webkit-background-size: 100%;
-  background-color: inherit;
   background-size: 100%;
+  background-color: inherit;
   width: 1080px;
-  top: 20%;
-  height: calc(720px - 11%);
+  top: 190px;
+  height: calc(720px - 168px);
   position: absolute;
   z-index: 3;
   background-image: url("http://www.conscience-et-eveil-spirituel.com/wp-content/uploads/2015/06/agriculture-intensive.jpg");
@@ -30,42 +31,43 @@ h1 {
   text-align: center;
   top: 0;
   cursor: default;
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: skew(20deg, 0deg);
 }
 
 .onglet {
   width: 1080px;
-  height: calc(720px - 10%);
+  height: calc(720px - 168px);
   position: absolute;
-  top: 20%;
+  top: 190px;
   z-index: 2;
+  counter-increment: lowl;
 }
 
 .onglet:hover {
   z-index: 10;
+  color: #fff;
 }
 
 .onglet .titre {
   width: 19%;
   text-align: center;
-  height: 15%;
+  height: 90px;
   vertical-align: bottom;
   position: absolute;
-  top: -15%;
+  top: -100px;
   z-index: 6;
   border-radius: 10% 10% 0 0;
   background-color: inherit;
-  padding: 3px;
+  padding: 5px;
   cursor: pointer;
   font-size: 1.5em;
 }
 
-.onglet .titre:hover {
+.onglet .titre::before {
+  content:counter(lowl) ')';
 }
 
-
-.onglet .ongletInfos {
-  padding: 10px;
-}
 
 #onglet1 .titre {
   left: 0;
@@ -78,13 +80,14 @@ h1 {
 }
 
 #onglet1:hover {
-  background-color: #66f;
+  background-color: rgba(80, 80, 255, 0.8);
 }
 #onglet2:hover {
-  background-color: #f66;
+  background-color: rgba(255, 80, 80, 0.8);
 }
-#onglet3:hover {
-  background-color: #f6f;
+#onglet3:hover { 
+  background-color: rgba(211, 104, 0, 0.8);
+
 }
 
 .transparence {
@@ -120,14 +123,52 @@ svg {
     transform: rotate(-90deg);
 }
 
+.cool .circle_animation {
+    stroke-dashoffset: 80;
+    -webkit-animation: cool 1s ease-out forwards;
+    animation: cool 1s ease-out forwards;
+}
 
-@-webkit-keyframes html {
+
+@-webkit-keyframes grossir {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(3);
+  }
+}
+
+@keyframes grossir {
+  from {
+    transform: scale(1);
+    font-size: 1em;
+  }
+  to {
+    transform: scale(3);
+    font-size: 3em;
+  }
+}
+
+.anime::before {
+  position: absolute;
+  top: -10px;
+  left: 50px;
+}
+
+.anime:hover::before {
+  content: 'mdr';
+  animation-name: grossir;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes cool {
   to {
     stroke-dashoffset: 80; /* 50% would be 220 (half the initial value specified above) */
   }
 }
 
-@keyframes html {
+@keyframes cool {
   to {
     stroke-dashoffset: 80;
   }
@@ -195,4 +236,12 @@ div:first-child:hover::after {
 
 .fa:hover {
   cursor: pointer;
+}
+
+.elem {
+  width: 33%;
+  height: calc((720px - 168px) / 2);
+  display: block;
+  float: left;
+  text-align: center;
 }
