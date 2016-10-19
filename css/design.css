@@ -10,6 +10,10 @@ html, body, #content {
   width: 1080px;
   height: 720px;
   background-color: #0CA600;
+  background-image: url("http://www.actu-environnement.com/images/illustrations/news/18035_une.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
   margin: auto;
   color: #fff;
 }
@@ -33,6 +37,15 @@ h1 {
   cursor: default;
   background-color: rgba(0, 0, 0, 0.3);
   transform: skew(20deg, 0deg);
+  margin: auto;
+  width: 33%;
+  box-shadow: 3px 3px 5px #000;
+  border-radius: 10%;
+}
+
+h1:hover {
+  animation-name: skewDouble;
+  animation-duration: 0.3s;
 }
 
 .onglet {
@@ -42,6 +55,7 @@ h1 {
   top: 190px;
   z-index: 2;
   counter-increment: lowl;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .onglet:hover {
@@ -55,13 +69,15 @@ h1 {
   height: 90px;
   vertical-align: bottom;
   position: absolute;
-  top: -100px;
+  top: -102px;
   z-index: 6;
   border-radius: 10% 10% 0 0;
   background-color: inherit;
   padding: 5px;
   cursor: pointer;
   font-size: 1.5em;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 0px;
 }
 
 .onglet .titre::before {
@@ -142,11 +158,33 @@ svg {
 @keyframes grossir {
   from {
     transform: scale(1);
-    font-size: 1em;
   }
   to {
     transform: scale(3);
-    font-size: 3em;
+  }
+}
+
+@-webkit-keyframes skewDouble {
+  from {
+    transform: skew(20deg, 0deg);
+  }
+  50% {
+    transform: skew(-20deg, 0deg);
+  }
+  to {
+    transform: skew(20deg, 0deg);
+  }
+}
+
+@keyframes skewDouble {
+  from {
+    transform: skew(20deg, 0deg);
+  }
+  50% {
+    transform: skew(-40deg, 0deg);
+  }
+  to {
+    transform: skew(20deg, 0deg);
   }
 }
 
